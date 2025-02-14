@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with About, Services, and Contact</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Page body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation bar styling */
+        nav {
+            background: linear-gradient(to right, #1a73e8, #34b7f1);
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #fff;
+            color: #1a73e8;
+        }
+
+        nav a:active {
+            background-color: #34b7f1;
+            color: white;
+        }
+
+        /* Section styling */
+        section {
+            padding: 50px;
+            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* About Section */
+        section#about {
+            background-color: #fff;
+        }
+
+        h1, h2 {
+            color: #444;
+        }
+
+        .about-content {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .about-content p {
+            margin-bottom: 15px;
+        }
+
+        /* Services Section Styling */
+        section#services {
+            background-color: #e0f7fa;
+            color: #444;
+        }
+
+        .service-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            color: #1a73e8;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Contact Section Styling */
+        section#contact {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .contact-form {
+            background-color: #f4f4f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            color: #1a73e8;
+            margin-bottom: 20px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: #1a73e8;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form input[type="submit"]:hover {
+            background-color: #34b7f1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/contact">Contact</a>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <h1>About Us</h1>
+        <h2>Our Mission</h2>
+        <div class="about-content">
+            <p>Welcome to our website! We are a company dedicated to providing top-notch services and products to our clients. Our mission is to innovate and create value for our customers.</p>
+            <p>Founded in 2020, we have grown rapidly by adhering to the highest standards of quality and customer satisfaction. Our team consists of skilled professionals who are passionate about their work and committed to achieving excellence.</p>
+            <p>We believe in creating long-lasting relationships with our customers and always aim to exceed expectations.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h1>Our Services</h1>
+        <div class="service-card">
+            <h3>Web Development</h3>
+            <p>We provide professional web development services, focusing on responsive design, SEO optimization, and user-friendly interfaces.</p>
+        </div>
+        <div class="service-card">
+            <h3>Mobile App Development</h3>
+            <p>Our team creates custom mobile applications for both iOS and Android platforms, ensuring seamless user experiences.</p>
+        </div>
+        <div class="service-card">
+            <h3>Consulting Services</h3>
+            <p>We offer expert consulting to help businesses streamline their operations, improve efficiency, and enhance their growth potential.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <div class="contact-form">
+            <h2>Get In Touch</h2>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>

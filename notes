@@ -1,0 +1,26 @@
+Middleware:
+
+    Middleware are funcs that has access to request object response object and next middleware func in application request response cycle.
+
+    5 types of Middleware:
+
+        1. application level middleware: it binds application level middleware to an instance of the app object by using app.use() and app.METHOD
+        where METHOD is the Http request where the middleware handles 
+        (GET,PUT,POST)
+
+        2.Router level middleware: It is same as application level middleware except it is bound to an instance of Express.Router()
+
+        3.Error handling middleware: it takes 4 arguments app.use(Error,request,response,next)
+        where error=To handle error     request=request from user    response=response to user     next=middleware function
+
+        4.Buildin middleware: 3 types of Buildin middleware
+                    a.Express.Static(): it serves static assets like HTML,image.
+                    b.Express.json(): it parses incoming request with json payloads.
+                    c.Express.urlencoded(): it parses incoming request with urlencoded payloads.
+                    
+        5.Third Party Middleware: it use 3rd Party middlewareto add functionality to Express apps.
+
+Passport.js:
+It is a popular authentication middleware for nodejs.
+it is extremely flexible and modular design and support wide range of authentication methods.
+It allows developer to integrate authenticaation mechanism into their application.
