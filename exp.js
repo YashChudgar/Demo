@@ -42,28 +42,34 @@ const { initializePassport } = require('./passportConfig')
 app.use(express.urlencoded({extended:true}))
 app.use(express.static('public'))
 
-initializePassport(passport)
+
+
+mongoose.connect('mongodb://127.0.0.1:27017/cse2')
+.then(()=>{console.log('connected with mongodb')})
+.catch((err)=>{console.log('connection error',err)})
+
 passport.use(session({
     secret : 'your_secret_key',
     resave:false,
     saveUninitialized:false
 }))
 
-mongoose.connect('mongodb://127.0.0.1:27017/cse2')
-.then(()=>{console.log('connected with mongodb')})
-.catch((err)=>{console.log('connection error',err)})
-
-
-
+// app.use(passport.initialize())
+// app.use(passport.session())
+initializePassport(passport)
 app.get('/',(req,res)=>{
     res.sendFile(__dirname + '/public/index.html')
+ })
+app.get('/register',(req,res)=>{
+    res.sendFile(__dirname + '/public/register.html')
 })
-
-app.post('/page',(req,res)=>{
+app.post('/register',(req,res)=>{
     const NewUser=new user({
         FirstName:req.body.FirstName,
         LastName:req.body.LastName,
-        Email:req.body.Email
+        Email:req.body.Email,
+        UserName:req.body.UserName,
+        password:req.body.password
     })
 
     NewUser.save()
@@ -75,6 +81,14 @@ app.post('/page',(req,res)=>{
 //     res.sendFile(__dirname + '/public/page.html')
 // })
 
-app.get('/',(req,res)=>{
+app.get('/login',(req,res)=>{
     res.sendFile(__dirname + '/public/login.html')
 })  
+
+app.post('/login',passport.authenticate('local',{failureRedirect : '/login'}),(req,res)=>{
+    res.send(`Welcome ${req.user.UserName}`)
+})
+
+app.listen(8000,(req,res)=>{
+    console.log('http://localhost:8000')
+})
